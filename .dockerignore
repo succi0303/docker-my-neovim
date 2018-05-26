@@ -1,0 +1,7 @@
+# Git
+.git
+.gitignore
+
+# Swap
+*.swp
+*.swo
