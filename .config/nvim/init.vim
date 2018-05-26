@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'sjl/badwolf'
+Plug 'thinca/vim-partedit'
 Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -171,6 +172,10 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
+
+" vim-partedit
+vnoremap <C-l> :Partedit<CR>
+noremap <C-h> :ParteditEnd<CR>
 
 " vim-smartinput-endwise
 call smartinput_endwise#define_default_rules()
