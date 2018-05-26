@@ -89,19 +89,19 @@ set termguicolors
 syntax on
 
 " denite.vim
+nnoremap <silent> ,b :Denite buffer<CR>
+nnoremap <silent> ,c :Denite changes<CR>
+nnoremap <silent> ,f :Denite file<CR>
+nnoremap <silent> ,g :Denite grep<CR>
+nnoremap <silent> ,h :Denite help<CR>
+nnoremap <silent> ,l :Denite line<CR>
+nnoremap <silent> ,t :Denite tag<CR>
 call denite#custom#map('insert', '<esc>', '<denite:enter_mode:normal>', 'noremap')
 call denite#custom#map('normal', '<esc>', '<denite:quit>', 'noremap')
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
 call denite#custom#map('insert', '<C-j>', '<denite:do_action:split>', 'noremap')
 call denite#custom#map('insert', '<C-k>', '<denite:do_action:vsplit>', 'noremap')
-noremap <C-P> :Denite buffer<CR>
-noremap <C-N> :Denite -buffer-name=file file<CR>
-noremap <C-Z> :Denite file_old<CR>
-noremap <C-C> :Denite file_rec<CR>
-nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
-nnoremap <silent> <Leader><C-f> :<C-u>Denite line<CR>
-nnoremap <silent> <expr><Space>l ":<C-u>DeniteWithCursorWord line<CR>"
 call denite#custom#option('default', 'prompt', '>')
 call denite#custom#option('default', 'direction', 'top')
 
