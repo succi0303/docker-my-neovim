@@ -17,6 +17,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'sjl/badwolf'
 Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -84,7 +85,7 @@ set wildmode=list,full
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
 
-colorscheme koehler
+colorscheme badwolf
 set termguicolors
 syntax on
 
@@ -156,7 +157,7 @@ let g:airline#extentions#tabline#enabled = 1
 let g:airline#extentions#tabline#show_buffers = 0
 let g:airline#extentions#tabline#tab_nr_type = 1
 let g:airline#extentions#tabline#fnamemod = ":t"
-let g:airline_theme = 'luna'
+let g:airline_theme = 'badwolf'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
