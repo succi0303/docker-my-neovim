@@ -11,7 +11,6 @@ Plug 'fuenor/qfixhowm'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
-Plug 'kannokanno/previm'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
@@ -23,7 +22,6 @@ Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
-Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
@@ -143,11 +141,6 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMapActivateNode = "<CR>"
 let file_name = expand("%:p")
 nnoremap <C-e> :NERDTreeToggle<CR>
-
-" open-browser
-let g:netw_nogx = 1
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
 
 " syntastic
 let g:syntastic_auto_loc_list = 0
