@@ -143,7 +143,13 @@ let file_name = expand("%:p")
 nnoremap <C-e> :NERDTreeToggle<CR>
 
 " syntastic
-let g:syntastic_auto_loc_list = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " vim-airline
 let g:airline#extentions#tabline#enabled = 1
