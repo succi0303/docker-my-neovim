@@ -142,6 +142,26 @@ let g:NERDTreeMapActivateNode = "<CR>"
 let file_name = expand("%:p")
 nnoremap <C-e> :NERDTreeToggle<CR>
 
+" qfixhowm
+let current_dir = getcwd()
+if filereadable(current_dir . '/Menu-00-00-000000.howm')
+  let howm_dir = current_dir
+  let howm_fileencoding = 'utf-8'
+  let howm_fileformat = 'unix'
+  let QFixWin_EnableMode = 1
+  let QFix_UseLocationList = 1
+  let howm_filename = '%Y/%m/%Y-%m%d-%H%M%S.md'
+  let QFixHowm_FileType = 'markdown'
+  let QFixHowm_Title = '#'
+  let QFixHowm_Template = [
+        \"# %TAG%",
+        \""
+        \]
+  let QFixHowm_SaveTime = -1
+  let QFixMRU_Entries = 50
+  let QFixMRU_Filename = current_dir . '/.qfixmru'
+endif
+
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
