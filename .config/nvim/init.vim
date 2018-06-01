@@ -150,7 +150,7 @@ if filereadable(current_dir . '/Menu-00-00-000000.howm')
   let howm_fileformat = 'unix'
   let QFixWin_EnableMode = 1
   let QFix_UseLocationList = 1
-  let howm_filename = '%Y/%m/%Y-%m%d-%H%M%S.md'
+  let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.md'
   let QFixHowm_FileType = 'markdown'
   let QFixHowm_Title = '#'
   let QFixHowm_Template = [
