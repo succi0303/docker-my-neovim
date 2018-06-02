@@ -1,25 +1,27 @@
-FROM ubuntu:latest
+FROM alpine:edge
 
 LABEL maintainer="succi0303@gmail.com"
 
-RUN apt-get update -y && \
-    apt-get install -y software-properties-common && \
-    apt-add-repository -y ppa:neovim-ppa/stable && \
-    apt-get update -y && \
-    apt-get install -y \
+RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache \
     curl \
+    gcc \
     git \
-    language-pack-ja-base \
-    language-pack-ja \
+    linux-headers \
+    musl-dev\
     neovim \
     python-dev \
-    python-pip \
+    py-pip \
     python3-dev \
-    python3-pip
+    py3-pip && \
+    rm -rf /var/cache/apk/*
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
 
-RUN pip3 install --upgrade neovim
+RUN pip3 install --upgrade pip neovim
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
