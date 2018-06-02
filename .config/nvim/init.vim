@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -86,6 +86,18 @@ set grepprg=grep\ -nh
 colorscheme badwolf
 set termguicolors
 syntax on
+
+" ale
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:airline#extentions#ale#open_lnum_symbol = '('
+let g:airline#extentions#ale#close_lnum_symbol = ')'
+let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+highlight link ALEErrorSign Tag
+highlight link ALEWarningSign StorageClass
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " denite.vim
 nnoremap <silent> ,b :Denite buffer<CR>
@@ -161,15 +173,6 @@ if filereadable(current_dir . '/Menu-00-00-000000.howm')
   let QFixMRU_Entries = 50
   let QFixMRU_Filename = current_dir . '/.qfixmru'
 endif
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " vim-airline
 let g:airline#extentions#tabline#enabled = 1
