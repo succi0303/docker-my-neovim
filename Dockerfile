@@ -21,7 +21,7 @@ RUN apk update && \
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
 
-RUN pip3 install --upgrade pip neovim
+RUN pip3 install --upgrade pip neovim flake8
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
