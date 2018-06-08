@@ -11,6 +11,7 @@ RUN apk update && \
     curl \
     gcc \
     git \
+    grep \
     linux-headers \
     musl-dev\
     neovim \
