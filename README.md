@@ -6,7 +6,7 @@ Neovim dockerized with my personal configuration.
 
 - Docker for Mac
 
-I use this on MacBook / macOS High Sierra
+I use this on  macOS Mojave
 
 ## Usage
 
