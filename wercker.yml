@@ -1,4 +1,5 @@
-box: docker
+box: alpine
+docker: true
 build:
   steps:
     - script:
