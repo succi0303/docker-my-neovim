@@ -6,6 +6,7 @@ Plug 'cespare/vim-toml'
 Plug 'cohama/vim-smartinput-endwise'
 Plug 'deton/jasegment.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'fuenor/qfixgrep'
 Plug 'fuenor/qfixhowm'
 Plug 'kana/vim-smartinput'
@@ -192,6 +193,26 @@ endif
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+" vim-go
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constrains = 1
+let g:go_highlight_generate_tags = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
+let g:go_def_mode = 'godef'
+let g:go_decls_includes = "func,type"
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
+let g:go_play_open_browser = 0
 
 " vim-indent-guides
 let g:indent_guides_auto_colors = 0

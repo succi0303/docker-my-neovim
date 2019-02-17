@@ -20,7 +20,8 @@ RUN apk update && \
     python3-dev \
     py3-pip \
     ruby \
-    ruby-dev && \
+    ruby-dev \
+    go && \
     rm -rf /var/cache/apk/*
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
