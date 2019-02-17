@@ -36,7 +36,7 @@ COPY .config /root/.config
 
 RUN nvim +PlugInstall +qa!
 
-RUN nvim -c "execute 'silent GoInstallBinaries' | execute 'quit'"
+RUN nvim -c ":silent! GoInstallBainaries | :qa!"
 
 WORKDIR /usr/src/nvim
 
