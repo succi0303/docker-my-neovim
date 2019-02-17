@@ -34,7 +34,7 @@ RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 COPY .config /root/.config
 
-RUN nvim +PlugInstall +qa
+RUN nvim +PlugInstall +GoInstallBinaries +qa
 
 WORKDIR /usr/src/nvim
 
