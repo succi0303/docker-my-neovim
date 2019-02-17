@@ -1,6 +1,6 @@
-box: alpine
-docker: true
 build:
+  box: alpine
+  docker: true
   steps:
     - script:
         name: docker build
