@@ -5,3 +5,8 @@ build:
     - script:
         name: docker build
         code: docker build .
+  after_steps:
+    - slack-notifier:
+        url: $SLACK_DEVELOPMENT_URL
+        channel: development
+        username: wercker-notify
