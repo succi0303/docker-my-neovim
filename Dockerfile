@@ -20,7 +20,7 @@ RUN apk update && \
     python3-dev \
     py3-pip \
     ruby \
-    ruby-dev &&
+    ruby-dev \
     go && \
     rm -rf /var/cache/apk/*
 
