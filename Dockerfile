@@ -30,7 +30,9 @@ ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
 RUN pip3 install --upgrade pip neovim flake8 && \
     gem install --no-document etc json rubocop
 
-ENV CGO_ENABLED=1 GOOS="linux"
+RUN mkdir /gobin
+
+ENV GOBIN="/gobin" PATH=$PATH:/gobin
 
 RUN go get github.com/klauspost/asmfmt/cmd/asmfmt && \
     go get github.com/derekparker/delve/cmd/dlv && \
