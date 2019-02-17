@@ -20,15 +20,24 @@ RUN apk update && \
     python3-dev \
     py3-pip \
     ruby \
-    ruby-dev \
-    g++ \
-    go && \
+    ruby-dev && \
     rm -rf /var/cache/apk/*
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
 
 RUN pip3 install --upgrade pip neovim flake8 && \
     gem install --no-document etc json rubocop
+
+RUN apk add --no-cache \
+    go \
+    binutils-gold \
+    g++ \
+    gcc \
+    gnupg \
+    libgcc \
+    linux-headers \
+    make && \
+    rm -r /var/cache/apk/*
 
 RUN mkdir /gobin
 
