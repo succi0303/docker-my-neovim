@@ -21,6 +21,7 @@ RUN apk update && \
     py3-pip \
     ruby \
     ruby-dev \
+    g++ \
     go && \
     rm -rf /var/cache/apk/*
 
@@ -29,7 +30,7 @@ ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
 RUN pip3 install --upgrade pip neovim flake8 && \
     gem install --no-document etc json rubocop
 
-RUN CGO_ENABLED=0 GOOS=linux && \
+RUN CGO_ENABLED=1 GOOS=linux && \
     go get github.com/klauspost/asmfmt/cmd/asmfmt && \
     go get github.com/derekparker/delve/cmd/dlv && \
     go get github.com/kisielk/errcheck && \
