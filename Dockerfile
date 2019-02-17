@@ -37,7 +37,6 @@ RUN apk add --no-cache \
     libgcc \
     linux-headers \
     make && \
-    rm -r /var/cache/apk/*
 
 RUN mkdir /gobin
 
