@@ -36,7 +36,7 @@ RUN apk add --no-cache \
     gnupg \
     libgcc \
     linux-headers \
-    make && \
+    make
 
 RUN mkdir /gobin
 
