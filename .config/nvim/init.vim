@@ -6,7 +6,7 @@ Plug 'cespare/vim-toml'
 Plug 'cohama/vim-smartinput-endwise'
 Plug 'deton/jasegment.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'fatih/vim-go'
 Plug 'fuenor/qfixgrep'
 Plug 'fuenor/qfixhowm'
 Plug 'kana/vim-smartinput'

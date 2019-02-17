@@ -1,0 +1,7 @@
+box: docker
+build:
+  docker: true
+  steps:
+    - script:
+        name: docker build
+        code: docker build .
