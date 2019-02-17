@@ -11,6 +11,7 @@ RUN apk update && \
     curl \
     gcc \
     git \
+    go \
     grep \
     linux-headers \
     musl-dev\
@@ -20,8 +21,7 @@ RUN apk update && \
     python3-dev \
     py3-pip \
     ruby \
-    ruby-dev \
-    go && \
+    ruby-dev && \
     rm -rf /var/cache/apk/*
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
@@ -34,7 +34,7 @@ RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 COPY .config /root/.config
 
-RUN nvim +PlugInstall +qa!
+RUN nvim -c "execute 'silent PlugInstall' | 'execute 'quit'"
 
 RUN nvim -c "execute 'silent GoInstallBinaries' | execute 'quit'"
 
