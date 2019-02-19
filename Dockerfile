@@ -24,7 +24,8 @@ RUN apk update && \
     ruby-dev && \
     rm -rf /var/cache/apk/*
 
-ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
+ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
+    PATH=$PATH:/root/go/bin
 
 RUN pip3 install --upgrade pip neovim flake8 && \
     gem install --no-document etc json rubocop
