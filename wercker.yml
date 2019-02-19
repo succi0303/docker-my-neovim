@@ -1,7 +1,13 @@
-box: docker
+box: alpine
 build:
   docker: true
   steps:
+    - script:
+        name: install docker
+        code: apk --no-cache add docker
+    - script:
+        name: install curl
+        code apk --no-cache add curl
     - script:
         name: docker build
         code: docker build .
