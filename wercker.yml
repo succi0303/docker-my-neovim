@@ -7,7 +7,7 @@ build:
         code: apk --no-cache add docker
     - script:
         name: install curl
-        code apk --no-cache add curl
+        code: apk --no-cache add curl
     - script:
         name: docker build
         code: docker build .
