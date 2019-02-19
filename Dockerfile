@@ -27,7 +27,7 @@ RUN apk update && \
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
     PATH=$PATH:/root/go/bin
 
-RUN pip3 install --upgrade pip neovim flake8 && \
+RUN pip3 install --upgrade pip neovim flake8 autopep8 && \
     gem install --no-document etc json rubocop
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
