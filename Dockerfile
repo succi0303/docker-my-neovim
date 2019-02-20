@@ -13,6 +13,8 @@ RUN apk update && \
     git \
     go \
     grep \
+    libxml2-dev \
+    libxslt-dev \
     linux-headers \
     musl-dev\
     neovim \
@@ -30,7 +32,7 @@ ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
     PATH=$PATH:/root/go/bin
 
 RUN pip3 install --upgrade pip neovim flake8 autopep8 && \
-    gem install --no-document etc json rubocop && \
+    gem install --no-document etc json rubocop solargraph && \
     npm install --global eslint prettier
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \

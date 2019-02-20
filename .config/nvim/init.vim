@@ -14,6 +14,10 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
@@ -235,6 +239,24 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
+
+" vim-lsp
+let g:lsp_diagnostics_enabled = 0
+if executable('solargraph')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'solargraph',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargragh stdio']},
+    \ 'initialization_options': {"diagnostics": "true"},
+    \ 'whitelist': ['ruby'],
+    \ })
+endif
+" asyncomplete.vim
+let g:asyncomplete_smart_completion = 1
+let g:asyncomplete_auto_popup = 1
+inoremap <exp> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <exp> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <exp> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+let g:asyncomplete_remove_dupulicate = 1
 
 " vim-partedit
 vnoremap <C-l> :Partedit<CR>
