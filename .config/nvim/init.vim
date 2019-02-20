@@ -91,11 +91,13 @@ syntax on
 " ale
 let g:ale_linters = {
   \ 'ruby': ['rubocop'],
-  \ 'python': ['flake8']
+  \ 'python': ['flake8'],
+  \ 'javascript': ['eslint'],
   \}
 let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'python': ['autopep8'],
+  \ 'javascript': ['prettier'],
   \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
