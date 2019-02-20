@@ -38,6 +38,8 @@ RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 COPY .config /root/.config
 
+COPY .eslintrc.json /root/.eslintrc.json
+
 RUN nvim +PlugInstall +qall
 
 RUN nvim -c "execute 'silent GoInstallBinaries' | execute 'quit'"
