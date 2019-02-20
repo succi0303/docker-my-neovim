@@ -57,6 +57,7 @@ set smartindent
 augroup fileTypeIndent
   autocmd!
   autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd BufNewFile,BufRead *.go setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
 nnoremap s <Nop>
@@ -92,11 +93,13 @@ syntax on
 let g:ale_linters = {
   \ 'ruby': ['rubocop'],
   \ 'python': ['flake8'],
+  \ 'go': ['golint'],
   \ 'javascript': ['eslint'],
   \}
 let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'python': ['autopep8'],
+  \ 'go': ['gofmt'],
   \ 'javascript': ['prettier'],
   \}
 let g:ale_fix_on_save = 1
@@ -214,15 +217,17 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constrains = 1
 let g:go_highlight_generate_tags = 1
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_deadline = "5s"
+" let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+" let g:go_metalinter_autosave = 1
+" let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+" let g:go_metalinter_deadline = "5s"
+let g:go_fmt_fail_silently = 1
 let g:go_def_mode = 'godef'
 let g:go_decls_includes = "func,type"
 let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 let g:go_play_open_browser = 0
+let g:go_term_enabled = 1
 
 " vim-indent-guides
 let g:indent_guides_auto_colors = 0
