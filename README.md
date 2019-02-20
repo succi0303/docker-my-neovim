@@ -12,8 +12,8 @@ I use this on  macOS Mojave
 
 ```bash
 # Install
-git clone https://github.com/succi0303/my-neovim-dockerized.git
-cd my-neovim-dockerized
+git clone https://github.com/succi0303/docker-my-neovim.git
+cd docker-my-neovim
 docker build -t nvim .
 
 # Run
