@@ -13,6 +13,8 @@ RUN apk update && \
     git \
     go \
     grep \
+    libxml2-dev \
+    libxslt-dev \
     linux-headers \
     musl-dev\
     neovim \
