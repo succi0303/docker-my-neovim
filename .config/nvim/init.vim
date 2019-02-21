@@ -19,8 +19,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'sjl/badwolf'
 Plug 'thinca/vim-partedit'
 Plug 'thinca/vim-qfreplace'
@@ -122,26 +120,6 @@ let g:ale_open_list = 1
 " let g:ale_keep_list_window_open = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" denite.vim
-nnoremap <silent> ,b :Denite buffer<CR>
-nnoremap <silent> ,c :Denite changes<CR>
-nnoremap <silent> ,f :Denite file<CR>
-nnoremap <silent> ,g :Denite grep<CR>
-nnoremap <silent> ,h :Denite help<CR>
-nnoremap <silent> ,l :Denite line<CR>
-nnoremap <silent> ,t :Denite tag<CR>
-call denite#custom#map('insert', '<esc>', '<denite:enter_mode:normal>', 'noremap')
-call denite#custom#map('normal', '<esc>', '<denite:quit>', 'noremap')
-call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-j>', '<denite:do_action:split>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:do_action:vsplit>', 'noremap')
-call denite#custom#option('default', 'prompt', '>')
-call denite#custom#option('default', 'direction', 'top')
-
-" deoplete.nvim
-let g:deoplete#enable_at_startup = 1
 
 " vim-easymothon
 let g:EasyMotion_startofline = 0
