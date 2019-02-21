@@ -228,6 +228,13 @@ if executable('solargraph')
     \ 'whitelist': ['ruby'],
     \ })
 endif
+if executable('gopls')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'gopls',
+    \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+    \ 'whitelist': ['go'],
+    \ })
+endif
 " asyncomplete.vim
 let g:asyncomplete_smart_completion = 1
 let g:asyncomplete_auto_popup = 1
