@@ -56,6 +56,8 @@ set smarttab
 set autoindent
 set smartindent
 
+set sh=bash
+
 augroup fileTypeIndent
   autocmd!
   autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
@@ -223,7 +225,7 @@ let g:lsp_diagnostics_enabled = 0
 if executable('solargraph')
   au User lsp_setup call lsp#register_server({
     \ 'name': 'solargraph',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargragh stdio']},
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
     \ 'initialization_options': {"diagnostics": "true"},
     \ 'whitelist': ['ruby'],
     \ })
@@ -236,12 +238,15 @@ if executable('gopls')
     \ })
 endif
 " asyncomplete.vim
-let g:asyncomplete_smart_completion = 1
 let g:asyncomplete_auto_popup = 1
 inoremap <exp> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <exp> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <exp> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 let g:asyncomplete_remove_dupulicate = 1
+" debug
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 " vim-partedit
 vnoremap <C-l> :Partedit<CR>
