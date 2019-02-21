@@ -1,32 +1,29 @@
-FROM alpine:edge
+FROM ubuntu:latest
 
 LABEL maintainer="succi0303@gmail.com"
 
-RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-
-RUN apk update && \
-    apk upgrade && \
-    apk add --no-cache \
-    build-base \
+RUN apt-get update -y && \
+    apt-get install -y software-properties-common && \
+    apt-add-repository -y ppa:neovim-ppa/stable && \
+    apt-get update -y && \
+    apt-get install -y \
     curl \
-    gcc \
     git \
-    go \
-    grep \
-    libxml2-dev \
-    libxslt-dev \
-    linux-headers \
-    musl-dev\
+    language-pack-ja-base \
+    language-pack-ja \
     neovim \
-    nodejs \
-    nodejs-npm \
     python-dev \
-    py-pip \
+    python-pip \
     python3-dev \
-    py3-pip \
-    ruby \
-    ruby-dev && \
-    rm -rf /var/cache/apk/*
+    python3-pip \
+    build-essential \
+    patch \
+    ruby-dev \
+    zlib1g-dev \
+    liblzma-dev \
+    golang-go \
+    nodejs \
+    npm
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
     PATH=$PATH:/root/go/bin
@@ -34,7 +31,7 @@ ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
 RUN pip3 install --upgrade pip neovim flake8 autopep8 && \
     gem install --no-document etc json rubocop solargraph && \
     npm install --global eslint prettier && \
-    go get -u golang.org/x/tools/cmd/gopls
+    go get golang.org/x/tools/cmd/gopls
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
