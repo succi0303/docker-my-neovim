@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 LABEL maintainer="succi0303@gmail.com"
 
@@ -27,7 +27,7 @@ RUN apt-get update -y && \
     npm
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
-    PATH=$PATH:/root/go/bin
+    GOPATH=$HOME/go PATH=$PATH:$HOME/go/bin
 
 RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server && \
     gem install --no-document etc json rubocop solargraph && \
@@ -45,6 +45,6 @@ RUN nvim +PlugInstall +qall
 
 RUN nvim -c "execute 'silent GoInstallBinaries' | execute 'quit'"
 
-WORKDIR /usr/src/nvim
+WORKDIR /root/go/src/nvim
 
 ENTRYPOINT ["nvim"]
