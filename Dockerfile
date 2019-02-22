@@ -27,7 +27,7 @@ RUN apt-get update -y && \
     npm
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
-    GOPATH=${HOME}/go PATH=${PATH}:${HOME}/go/bin
+    GOPATH=$HOME/go PATH=$PATH:$HOME/go/bin
 
 RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server && \
     gem install --no-document etc json rubocop solargraph && \
@@ -37,14 +37,14 @@ RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server && 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-COPY .config ${HOME}/.config
+COPY .config /root/.config
 
-COPY .eslintrc.json ${HOME}/.eslintrc.json
+COPY .eslintrc.json /root/.eslintrc.json
 
 RUN nvim +PlugInstall +qall
 
 RUN nvim -c "execute 'silent GoInstallBinaries' | execute 'quit'"
 
-WORKDIR ${HOME}/go/src/nvim
+WORKDIR /root/go/src/nvim
 
 ENTRYPOINT ["nvim"]
