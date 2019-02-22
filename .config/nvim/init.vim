@@ -105,6 +105,9 @@ let g:ale_fixers = {
   \ 'python': ['autopep8'],
   \ 'go': ['gofmt'],
   \ 'javascript': ['prettier'],
+  \ 'json': ['prettier'],
+  \ 'yaml': ['prettier'],
+  \ 'markdown': ['prettier'],
   \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
