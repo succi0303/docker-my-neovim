@@ -1,10 +1,11 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 LABEL maintainer="succi0303@gmail.com"
 
 RUN apt-get update -y && \
     apt-get install -y software-properties-common && \
     apt-add-repository -y ppa:neovim-ppa/stable && \
+    apt-add-repository -y ppa:longsleep/golang-backports && \
     apt-get update -y && \
     apt-get install -y \
     curl \
