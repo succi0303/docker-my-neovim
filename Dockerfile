@@ -27,7 +27,7 @@ RUN apt-get update -y && \
     npm
 
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
-    GOPATH=$HOME/go PATH=$PATH:$HOME/go/bin
+    GOPATH=/root/go PATH=$PATH:/root/go/bin
 
 RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server && \
     gem install --no-document etc json rubocop solargraph && \
