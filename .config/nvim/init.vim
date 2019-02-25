@@ -3,31 +3,18 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml'
-Plug 'cohama/vim-smartinput-endwise'
-Plug 'deton/jasegment.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'fatih/vim-go'
-Plug 'fuenor/qfixgrep'
-Plug 'fuenor/qfixhowm'
-Plug 'kana/vim-smartinput'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-user'
 Plug 'mattn/emmet-vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/badwolf'
-Plug 'thinca/vim-partedit'
-Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
 
 call plug#end()
@@ -152,34 +139,11 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>n <Plug>(easymotion_linebackward)
 
-" JpFormat
-set formatexpr=jpfmt#formatexpr()
-
 " nerdtree
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMapActivateNode = "<CR>"
 let file_name = expand("%:p")
 nnoremap <C-e> :NERDTreeToggle<CR>
-
-" qfixhowm
-let current_dir = getcwd()
-if filereadable(current_dir . '/Menu-00-00-000000.howm')
-  let howm_dir = current_dir
-  let howm_fileencoding = 'utf-8'
-  let howm_fileformat = 'unix'
-  let QFixWin_EnableMode = 1
-  let QFix_UseLocationList = 1
-  let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.md'
-  let QFixHowm_FileType = 'markdown'
-  let QFixHowm_Title = '#'
-  let QFixHowm_Template = [
-        \"# %TAG%",
-        \""
-        \]
-  let QFixHowm_SaveTime = -1
-  let QFixMRU_Entries = 50
-  let QFixMRU_Filename = current_dir . '/.qfixmru'
-endif
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -214,13 +178,6 @@ let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 let g:go_play_open_browser = 0
 let g:go_term_enabled = 1
-
-" vim-indent-guides
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
 
 " vim-lsp
 let g:lsp_diagnostics_enabled = 0
@@ -272,10 +229,3 @@ let g:asyncomplete_remove_dupulicate = 1
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
 let g:asyncomplete_log_file = expand('~/asyncomplete.log')
-
-" vim-partedit
-vnoremap <C-l> :Partedit<CR>
-noremap <C-h> :ParteditEnd<CR>
-
-" vim-smartinput-endwise
-call smartinput_endwise#define_default_rules()
