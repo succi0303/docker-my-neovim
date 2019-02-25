@@ -3,10 +3,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml'
-Plug 'cohama/vim-smartinput-endwise'
 Plug 'easymotion/vim-easymotion'
 Plug 'fatih/vim-go'
-Plug 'kana/vim-smartinput'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
 Plug 'mattn/emmet-vim'
@@ -250,6 +248,3 @@ let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 " vim-partedit
 vnoremap <C-l> :Partedit<CR>
 noremap <C-h> :ParteditEnd<CR>
-
-" vim-smartinput-endwise
-call smartinput_endwise#define_default_rules()
