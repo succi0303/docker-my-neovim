@@ -12,7 +12,6 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/badwolf'
-Plug 'thinca/vim-partedit'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
@@ -233,7 +232,3 @@ let g:asyncomplete_remove_dupulicate = 1
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
 let g:asyncomplete_log_file = expand('~/asyncomplete.log')
-
-" vim-partedit
-vnoremap <C-l> :Partedit<CR>
-noremap <C-h> :ParteditEnd<CR>
