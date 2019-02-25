@@ -149,9 +149,6 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>n <Plug>(easymotion_linebackward)
 
-" JpFormat
-set formatexpr=jpfmt#formatexpr()
-
 " nerdtree
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMapActivateNode = "<CR>"
