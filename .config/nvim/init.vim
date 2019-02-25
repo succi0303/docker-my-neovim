@@ -6,7 +6,6 @@ Plug 'cespare/vim-toml'
 Plug 'easymotion/vim-easymotion'
 Plug 'fatih/vim-go'
 Plug 'mattn/emmet-vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -184,13 +183,6 @@ let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 let g:go_play_open_browser = 0
 let g:go_term_enabled = 1
-
-" vim-indent-guides
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
 
 " vim-lsp
 let g:lsp_diagnostics_enabled = 0
