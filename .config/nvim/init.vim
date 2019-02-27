@@ -203,7 +203,7 @@ if executable('docker-langserver')
     \ 'name': 'docker-langserver',
     \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
     \ 'whitelist': ['dockerfile'],
-  })
+    \ })
 endif
 " asyncomplete.vim
 let g:asyncomplete_auto_popup = 1
