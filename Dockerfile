@@ -32,6 +32,7 @@ ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
 RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server && \
     gem install --no-document etc json rubocop solargraph && \
     npm install --global eslint prettier typescript typescript-language-server && \
+    go get golang.org/x/lint/golint && \
     go get golang.org/x/tools/cmd/gopls
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -42,8 +43,6 @@ COPY .config /root/.config
 COPY .eslintrc.json /root/.eslintrc.json
 
 RUN nvim +PlugInstall +qall
-
-RUN nvim -c "execute 'silent GoInstallBinaries' | execute 'quit'"
 
 WORKDIR /root/go/src/nvim
 
