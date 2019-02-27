@@ -29,7 +29,7 @@ RUN apt-get update -y && \
 ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
     GOPATH=/root/go PATH=$PATH:/root/go/bin
 
-RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server && \
+RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server neovim-remote && \
     gem install --no-document etc json rubocop solargraph && \
     npm install --global eslint prettier typescript typescript-language-server && \
     go get golang.org/x/lint/golint && \
