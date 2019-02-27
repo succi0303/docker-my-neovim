@@ -6,7 +6,6 @@ Plug 'cespare/vim-toml'
 Plug 'cohama/lexima.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'fatih/vim-go'
 Plug 'mattn/emmet-vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
@@ -158,28 +157,6 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_theme = 'badwolf'
-
-" vim-go
-let g:go_fmt_command = "goimports"
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_build_constrains = 1
-let g:go_highlight_generate_tags = 1
-" let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-" let g:go_metalinter_autosave = 1
-" let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-" let g:go_metalinter_deadline = "5s"
-let g:go_fmt_fail_silently = 1
-let g:go_def_mode = 'godef'
-let g:go_decls_includes = "func,type"
-let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
-let g:go_play_open_browser = 0
-let g:go_term_enabled = 1
 
 " vim-lsp
 let g:lsp_diagnostics_enabled = 0
