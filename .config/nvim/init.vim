@@ -198,6 +198,13 @@ if executable('typescript-language-server')
     \ 'whitelist': ['typescript', 'typescript.tsx'],
     \ })
 endif
+if executable('docker-langserver')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'docker-langserver',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
+    \ 'whitelist': ['dockerfile'],
+  })
+endif
 " asyncomplete.vim
 let g:asyncomplete_auto_popup = 1
 inoremap <exp> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
