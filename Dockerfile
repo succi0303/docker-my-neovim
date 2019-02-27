@@ -32,7 +32,7 @@ ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
 RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server && \
     gem install --no-document etc json rubocop solargraph && \
     npm install --global eslint prettier typescript typescript-language-server && \
-    go get golang.org/x/tools/golint && \
+    go get golang.org/x/lint/golint && \
     go get golang.org/x/tools/cmd/gopls
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
