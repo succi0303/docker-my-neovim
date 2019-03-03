@@ -35,12 +35,16 @@ RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server neo
     go get golang.org/x/lint/golint && \
     go get golang.org/x/tools/cmd/gopls
 
+RUN npm install --global textlint textlint-rule-preset-ja-technical-writing textlint-rule-spellcheck-tech-word
+
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 COPY .config /root/.config
 
 COPY .eslintrc.json /root/.eslintrc.json
+
+COPY .textlintrc /root/.textlintrc
 
 RUN nvim +PlugInstall +qall
 

@@ -87,6 +87,7 @@ let g:ale_linters = {
   \ 'python': ['flake8'],
   \ 'go': ['golint'],
   \ 'javascript': ['eslint'],
+  \ 'markdown': ['textlint'],
   \}
 let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
