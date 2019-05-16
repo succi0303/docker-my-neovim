@@ -6,6 +6,8 @@ Plug 'cespare/vim-toml'
 Plug 'cohama/lexima.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
@@ -122,6 +124,16 @@ let g:ale_open_list = 1
 " let g:ale_keep_list_window_open = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" fzf.vim
+nnoremap <C-g>f :Files<CR>
+nnoremap <C-g>b :Buffers<CR>
+nnoremap <C-g>l :BLines<CR>
+nnoremap <C-g>L :Lines<CR>
+nnoremap <C-g>g :GFiles<CR>
+nnoremap <C-g>G :GFiles?<CR>
+nnoremap <C-g>c :BCommits<CR>
+nnoremap <C-g>C :Commits<CR>
 
 " vim-easymothon
 let g:EasyMotion_startofline = 0
