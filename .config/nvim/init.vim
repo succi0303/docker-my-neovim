@@ -228,6 +228,13 @@ if executable('docker-langserver')
     \ 'whitelist': ['dockerfile'],
     \ })
 endif
+if executable('html-languageserver')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'html-languageserver',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'html-languageserver --stdio']},
+    \ 'whitelist': ['html'],
+    \ })
+endif
 " asyncomplete.vim
 let g:asyncomplete_auto_popup = 1
 inoremap <exp> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
