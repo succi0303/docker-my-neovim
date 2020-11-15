@@ -1,12 +1,12 @@
 # My Neovim Dockerized
 
-Neovim dockerized with my personal configuration.
+Neovim dockerized with my personal configurations.
 
 ## Requirements
 
 - Docker for Mac
 
-I use this on  macOS Mojave
+I use this on  macOS Catalina & Big Sur
 
 ## Usage
 
