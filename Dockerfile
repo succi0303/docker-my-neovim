@@ -13,8 +13,6 @@ RUN apt-get update -y && \
     language-pack-ja-base \
     language-pack-ja \
     neovim \
-    python-dev \
-    python-pip \
     python3-dev \
     python3-pip \
     build-essential \
@@ -32,9 +30,9 @@ ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8" \
 RUN pip3 install --upgrade pip neovim flake8 autopep8 python-language-server neovim-remote && \
     gem install --no-document etc json rubocop solargraph && \
     npm install --global eslint prettier typescript typescript-language-server dockerfile-language-server-nodejs \
-        vscode-html-languageserver-bin && \
-    go get golang.org/x/lint/golint && \
-    go get golang.org/x/tools/cmd/gopls
+        vscode-html-languageserver-bin
+RUN go get golang.org/x/lint && \
+    go get golang.org/x/tools/gopls
 
 RUN npm install --global textlint textlint-rule-preset-ja-technical-writing textlint-rule-spellcheck-tech-word
 
